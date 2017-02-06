@@ -61,7 +61,7 @@ textarea {
   -moz-appearance: none;
   appearance: none;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #ecf0f1;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
@@ -71,7 +71,7 @@ textarea {
   transition: border-color 150ms ease;
   width: 100%; }
   [type='color']:hover, [type='date']:hover, [type='datetime']:hover, [type='datetime-local']:hover, [type='email']:hover, [type='month']:hover, [type='number']:hover, [type='password']:hover, [type='search']:hover, [type='tel']:hover, [type='text']:hover, [type='time']:hover, [type='url']:hover, [type='week']:hover, input:not([type]):hover, textarea:hover {
-    border-color: #b1b1b1; }
+    border-color: #bdc0c1; }
   [type='color']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='email']:focus, [type='month']:focus, [type='number']:focus, [type='password']:focus, [type='search']:focus, [type='tel']:focus, [type='text']:focus, [type='time']:focus, [type='url']:focus, [type='week']:focus, input:not([type]):focus, textarea:focus {
     border-color: #1565c0;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(18, 89, 169, 0.7);
@@ -80,7 +80,7 @@ textarea {
     background-color: #f2f2f2;
     cursor: not-allowed; }
     [type='color']:disabled:hover, [type='date']:disabled:hover, [type='datetime']:disabled:hover, [type='datetime-local']:disabled:hover, [type='email']:disabled:hover, [type='month']:disabled:hover, [type='number']:disabled:hover, [type='password']:disabled:hover, [type='search']:disabled:hover, [type='tel']:disabled:hover, [type='text']:disabled:hover, [type='time']:disabled:hover, [type='url']:disabled:hover, [type='week']:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover {
-      border: 1px solid #ddd; }
+      border: 1px solid #ecf0f1; }
   [type='color']::-webkit-input-placeholder, [type='date']::-webkit-input-placeholder, [type='datetime']::-webkit-input-placeholder, [type='datetime-local']::-webkit-input-placeholder, [type='email']::-webkit-input-placeholder, [type='month']::-webkit-input-placeholder, [type='number']::-webkit-input-placeholder, [type='password']::-webkit-input-placeholder, [type='search']::-webkit-input-placeholder, [type='tel']::-webkit-input-placeholder, [type='text']::-webkit-input-placeholder, [type='time']::-webkit-input-placeholder, [type='url']::-webkit-input-placeholder, [type='week']::-webkit-input-placeholder, input:not([type])::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     color: #858585; }
   [type='color']::-moz-placeholder, [type='date']::-moz-placeholder, [type='datetime']::-moz-placeholder, [type='datetime-local']::-moz-placeholder, [type='email']::-moz-placeholder, [type='month']::-moz-placeholder, [type='number']::-moz-placeholder, [type='password']::-moz-placeholder, [type='search']::-moz-placeholder, [type='tel']::-moz-placeholder, [type='text']::-moz-placeholder, [type='time']::-moz-placeholder, [type='url']::-moz-placeholder, [type='week']::-moz-placeholder, input:not([type])::-moz-placeholder, textarea::-moz-placeholder {
@@ -119,7 +119,8 @@ body {
   height: 100%; }
 
 body {
-  margin: 0; }
+  margin: 0;
+  background-color: #ecf0f1; }
 
 .page-wrap {
   height: 100vh;
@@ -133,13 +134,9 @@ body {
   flex: 1; }
 
 .content {
-  margin: auto;
   width: 100%;
-  max-width: 600px; }
-
-.sidebar {
-  width: 270px;
-  background-color: #f1f1f1; }
+  max-width: 700px;
+  margin: 3em auto; }
 
 ul,
 ol {
@@ -172,13 +169,13 @@ table {
   width: 100%; }
 
 th {
-  border-bottom: 1px solid #a6a6a6;
+  border-bottom: 1px solid #b1b4b5;
   font-weight: 600;
   padding: 0.75em 0;
   text-align: left; }
 
 td {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ecf0f1;
   padding: 0.75em 0; }
 
 tr,
@@ -215,8 +212,40 @@ a {
     color: #104c90; }
 
 hr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ecf0f1;
   border-left: 0;
   border-right: 0;
   border-top: 0;
   margin: 1.5em 0; }
+
+.sightings__info {
+  margin-bottom: 0.75em;
+  text-align: right; }
+
+.sighting {
+  margin-bottom: 0.75em;
+  padding: 1.5em;
+  background-color: #fefefe;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06); }
+
+.sighting__info {
+  display: -webkit-box;
+  display: flex;
+  margin-bottom: 1.5em; }
+
+.sighting__info-left {
+  -webkit-box-flex: 1;
+  flex: 1; }
+
+.sighting__info-right {
+  text-align: right; }
+
+.sighting__spec-label {
+  display: inline-block;
+  width: 145px;
+  font-weight: 600; }
+
+.sidebar {
+  width: 270px;
+  padding: 1.5em;
+  background-color: #333; }

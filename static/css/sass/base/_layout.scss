@@ -15,6 +15,7 @@ body {
 
 body {
     margin: 0;
+    background-color: $light-gray;
 }
 
 
@@ -29,12 +30,7 @@ body {
 }
 
 .content {
-    margin: auto;
     width: 100%;
-    max-width: 600px;
-}
-
-.sidebar {
-    width: 270px;
-    background-color: #f1f1f1;
+    max-width: $content-width;
+    margin: $large-spacing auto;
 }
