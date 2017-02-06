@@ -1,0 +1,30 @@
+{
+  "name": "duck-fe",
+  "version": "1.0.0",
+  "description": "Frontend for the Vincit Duck backend",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4llu/duck-fe.git"
+  },
+  "keywords": [
+    "Vincit",
+    "Duck"
+  ],
+  "author": "Aleksanteri Hämäläinen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4llu/duck-fe/issues"
+  },
+  "homepage": "https://github.com/4llu/duck-fe#readme",
+  "dependencies": {
+      "gulp": "^3.9.1",
+      "gulp-autoprefixer": "^3.1.1",
+      "gulp-clean-css": "^2.3.2",
+      "gulp-rename": "^1.2.2",
+      "gulp-sass": "^3.1.0"
+    }
+}
