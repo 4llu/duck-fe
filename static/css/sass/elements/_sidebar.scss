@@ -1,5 +1,10 @@
 .sidebar {
     width: $sidebar-width;
-    padding: $base-spacing;
     background-color: $dark-gray;
+}
+
+.sidebar__section {
+    padding: $base-spacing;
+    padding-bottom: 0;
+    color: $light-gray;
 }

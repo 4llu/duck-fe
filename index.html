@@ -68,7 +68,31 @@
                 </main>
             </div>
             <aside class="sidebar">
-                <button type="button" name="button">New sighting</button>
+                    <button type="button" class="btn-full-width" name="button">+ New sighting</button>
+                    <button type="button" class="btn-full-width" name="button">Refresh sightings</button>
+                <div class="sidebar__section">
+                    <form>
+                        <span>Order:</span>
+                        <select name="sightings-order">
+                            <option value="0">Newest first</option>
+                            <option value="0">Oldest first</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="sidebar__section">
+                    <form>
+                        <span>Filters:</span>
+                        <label for="">Species</label>
+                        <select class="" name="">
+                            <option value="">Mallard</option>
+                            <option value="">Robin</option>
+                        </select>
+                        <label for="">Max # of birds</label>
+                        <input type="number" name="" value="">
+                        <label for="">Min # of birds</label>
+                        <input type="number" name="" value="">
+                    </form>
+                </div>
             </aside>
         </div>
     </body>
