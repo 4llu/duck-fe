@@ -23,7 +23,7 @@
     Controller.$inject = [];
 
     /* @ngInject */
-    function Controller($rootScope, localStorageService) {
+    function Controller() {
         var vm = this;
 
         activate();
