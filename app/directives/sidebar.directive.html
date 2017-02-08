@@ -6,20 +6,23 @@
     </div>
     <div class="sidebar__section">
         <form class="sidebar__form">
-            <label for="s-order">Order:</label>
-            <select id="s-order" name="sightingsOrder">
-                <option value="1">Newest first</option>
-                <option value="0">Oldest first</option>
+            <label for="s-order">Order</label>
+            <select id="s-order" name="sightingsOrder" ng-model="vm.order" ng-change="vm.updateOrder()">
+                <option value="0">Newest first</option>
+                <option value="1">Oldest first</option>
             </select>
             <label for="species-filter">Species</label>
-            <select class="species-filter" name="speciesFilter">
-                <option value="all">All</option>
-                <option ng-repeat="sp in vm.species" ng-value="{{ sp.name | replace : ' ' : '-'}}">{{ sp.name | capitalize }}</option>
+            <select class="species-filter" name="speciesFilter" ng-model="vm.speciesFilter" ng-options="sp as (sp.name | capitalize ) for sp in vm.species" ng-change="vm.updateSpeciesFilter()">
             </select>
+            <!-- <select class="species-filter" name="speciesFilter" ng-model="vm.speciesFilter" ng-change="vm.updateSpeciesFilter()">
+                <option ng-repeat="sp in vm.species" value="{{ sp }}">{{ sp.name | capitalize }}</option>
+                <option ng-repeat="sp in vm.species" ng-value="{{ sp.name | replace : ' ' : '-'}}">{{ sp.name | capitalize }}</option>
+            </select> -->
             <label for="min-bn">Max. number of birds</label>
-            <input type="number" name="minNumBirds" id="min-bn" placeholder="None">
+            <input type="number" name="minBirdNum" id="min-bn" placeholder="None" ng-model="vm.minBirdNum" ng-change="vm.updateMinBirdNum()">
             <label for="max-bn">Min. number of birds</label>
-            <input type="number" name="maxNumBirds" id="max-bn" placeholder="None">
+            <input type="number" name="maxBirdNum" id="max-bn" placeholder="None" ng-model="vm.maxBirdNum" ng-change="vm.updateMaxBirdNum()">
+            <a href="javascript:void(0)" class="plain-link" ng-click="vm.initOptions()"><img src="/static/images/icon-clear.svg" class="icon">Clear filters</a>
         </form>
     </div>
 </aside>
