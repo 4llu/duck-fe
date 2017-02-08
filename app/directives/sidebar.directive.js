@@ -26,9 +26,31 @@
     function Controller() {
         var vm = this;
 
+        vm.species = [
+              {
+                name: 'mallard'
+              },
+              {
+                name: 'redhead'
+              },
+              {
+                name: 'gadwall'
+              },
+              {
+                name: 'canvasback'
+              },
+              {
+                name: 'lesser scaup'
+              }
+            ];
+            
         activate();
 
         function activate() {
+
+        }
+
+        function orderBy() {
 
         }
     }

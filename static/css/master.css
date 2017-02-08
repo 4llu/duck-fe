@@ -279,8 +279,6 @@ hr {
 .sighting__spec-value {
   -webkit-box-flex: 1;
   flex: 1; }
-  .sighting__spec-value--species {
-    text-transform: capitalize; }
 
 .sidebar {
   position: fixed;

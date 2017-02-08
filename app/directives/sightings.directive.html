@@ -12,7 +12,7 @@
             <div class="sighting__top-row">
                 <div class="sighting__spec">
                     <span class="sighting__spec-label">Species:</span>
-                    <span class="sighting__spec-value sighting__spec-value--species">{{ sighting.species }}</span>
+                    <span class="sighting__spec-value sighting__spec-value--species">{{ sighting.species | capitalize}}</span>
                 </div>
                 <span class="sighting__date">{{ sighting.dateTime | date : "dd.mm.yyyy 'at' HH:mm"}}</span>
             </div>
