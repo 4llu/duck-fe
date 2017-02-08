@@ -14,10 +14,6 @@
             <label for="species-filter">Species</label>
             <select class="species-filter" name="speciesFilter" ng-model="vm.speciesFilter" ng-options="sp as (sp.name | capitalize ) for sp in vm.species" ng-change="vm.updateOptions()">
             </select>
-            <!-- <select class="species-filter" name="speciesFilter" ng-model="vm.speciesFilter" ng-change="vm.updateSpeciesFilter()">
-                <option ng-repeat="sp in vm.species" value="{{ sp }}">{{ sp.name | capitalize }}</option>
-                <option ng-repeat="sp in vm.species" ng-value="{{ sp.name | replace : ' ' : '-'}}">{{ sp.name | capitalize }}</option>
-            </select> -->
             <label for="min-bn">Min. number of birds</label>
             <input type="number" name="minBirdNum" id="min-bn" placeholder="None" ng-model="vm.minBirdNum" ng-change="vm.updateOptions()">
             <label for="max-bn">Max. number of birds</label>

@@ -26,6 +26,7 @@
     function Controller($http, $rootScope) {
         var vm = this;
 
+        // Functions
         vm.updateOptions = updateOptions;
         vm.initOptions = initOptions;
 

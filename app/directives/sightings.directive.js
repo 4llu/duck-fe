@@ -45,6 +45,7 @@
 
         function arrangeSightings(options) {
             var tempArray = vm.allSightings;
+            // Arrange list as per options
             tempArray = tempArray.filter(function(value){ return options.minBirdNum ? value.count >= options.minBirdNum : true });
             tempArray = tempArray.filter(function(value){ return options.maxBirdNum ? value.count <= options.maxBirdNum : true });
             tempArray = tempArray.filter(function(value){ return options.speciesFilter.name != "all" ? value.species == options.speciesFilter.name : true });
