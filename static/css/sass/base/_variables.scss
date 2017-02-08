@@ -25,19 +25,19 @@ $large-spacing: $base-spacing * 2;
 $base-z-index: 0;
 
 // Colors
-$blue: #1565c0;
+$blue: #1abc9c;
 $green: #2ecc71;
 $red: #e74c3c;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ecf0f1;
 $light-gray: #f1f1f1;
-$white: #fefefe;
 
 // Font Colors
 $base-font-color: $dark-gray;
-$action-color: $green;
+$action-color: $blue;
 $warning-color: $red;
+$success-color: $green;
 
 // Border
 $base-border-color: shade($light-gray, 15%);

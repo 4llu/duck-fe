@@ -1,0 +1,14 @@
+.message {
+    margin-top: $small-spacing;
+    padding: $small-spacing;
+    color: white;
+    text-align: center;
+}
+
+.message--error {
+    background-color: $warning-color;
+}
+
+.message--success {
+    background-color: $success-color;
+}

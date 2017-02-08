@@ -23,6 +23,8 @@
                     <p class="error" ng-show="vm.newSightingForm.description.$invalid && !vm.newSightingForm.description.$pristine">Description required</p>
 
                     <button type="submit" name="newSightingSubmit">Submit</button>
+                    <p ng-show="vm.submitSuccess" class="message message--success">Submit successfull!</p>
+                    <p ng-show="vm.submitError" class="message message--error">Something went wrong with the submission</p>
                 </form>
         </div>
     </div>

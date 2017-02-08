@@ -20,14 +20,16 @@
         return directive;
     }
 
-    Controller.$inject = ["$http", "$rootScope", "$filter"];
+    Controller.$inject = ["$http", "$rootScope", "$filter", "$timeout"];
 
     /* @ngInject */
-    function Controller($http, $rootScope, $filter) {
+    function Controller($http, $rootScope, $filter, $timeout) {
         var vm = this;
 
         // Variables
         vm.show = true;
+        vm.submitError = false;
+        vm.submitSuccess = false;
 
         // Functions
         vm.close = close;
@@ -53,16 +55,22 @@
         }
 
         function close() {
-            this.show = false;
+            vm.show = false;
             $("body").removeClass("modal-open")
         }
 
         function submit() {
+            // Reset messages
+            vm.submitSuccess = false;
+            vm.submitError = false;
+
+            // Check all
             vm.newSightingForm.time.$pristine = false;
             vm.newSightingForm.count.$pristine = false;
             vm.newSightingForm.species.$pristine = false;
             vm.newSightingForm.description.$pristine = false;
-            
+
+            // If valid
             if (vm.newSightingForm.$valid) {
                 var data = {
                     species: vm.species.name,
@@ -70,9 +78,32 @@
                     dateTime: $filter("date")(vm.time, "yyyy-MM-ddTHH:mm:ss") + "Z",
                     count: vm.count,
                 }
-                console.log(data);
 
-                // $http.post("/sightings", data);
+                $http.post("/sightings", data)
+                    .then(function(res) {
+                        // Show message
+                        vm.submitSuccess = true;
+
+                        // Reset form
+                        vm.description = undefined;
+                        vm.count = undefined;
+                        vm.time = undefined;
+                        vm.species = undefined;
+
+                        vm.newSightingForm.time.$pristine = true;
+                        vm.newSightingForm.count.$pristine = true;
+                        vm.newSightingForm.species.$pristine = true;
+                        vm.newSightingForm.description.$pristine = true;
+
+                        $timeout(function(){
+                            close()
+                        }, 2000)
+                    },
+                    function(res) {
+                        // Show message
+                        vm.submitError = true;
+                    }
+                )
             }
         }
 
