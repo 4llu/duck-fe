@@ -27,7 +27,7 @@
         var vm = this;
 
         // Variables
-        vm.show = true;
+        vm.show = false;
         vm.submitError = false;
         vm.submitSuccess = false;
 
@@ -95,8 +95,11 @@
                         vm.newSightingForm.species.$pristine = true;
                         vm.newSightingForm.description.$pristine = true;
 
+                        $rootScope.$broadcast("newSightingAdded");
+
                         $timeout(function(){
-                            close()
+                            close();
+                            vm.submitSuccess = false;
                         }, 2000)
                     },
                     function(res) {

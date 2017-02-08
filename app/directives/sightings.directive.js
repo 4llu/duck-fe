@@ -36,11 +36,15 @@
         activate();
 
         function activate() {
-            getSightings()
+            vm.getSightings()
 
             $rootScope.$on("updateSightingOptions", function(event, data) {
                 arrangeSightings(data)
             });
+
+            $rootScope.$on("newSightingAdded", function() {
+                vm.getSightings();
+            })
         }
 
         function arrangeSightings(options) {
