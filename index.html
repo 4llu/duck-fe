@@ -16,6 +16,8 @@
 
         <script src="app/app.module.js" type="text/javascript"></script>
         <script src="app/app.config.js" type="text/javascript"></script>
+
+        <script src="app/directives/sidebar.directive.js" type="text/javascript"></script>
     </head>
     <body ng-app="app">
         <div class="page-wrap">
@@ -67,32 +69,7 @@
                     </ul>
                 </main>
             </div>
-            <aside class="sidebar">
-                <div class="sidebar__section">
-                    <div class="u-center-text">
-                        <button type="button" name="new-sighting"><img class="icon" src="/static/images/icon-plus.svg">New sighting</button>
-                    </div>
-                </div>
-                <div class="sidebar__section">
-                    <form class="sidebar__form">
-                        <label for="s-order">Order:</label>
-                        <select id="s-order" name="sightingsOrder">
-                            <option value="1">Newest first</option>
-                            <option value="0">Oldest first</option>
-                        </select>
-                        <label for="">Species</label>
-                        <select class="" name="">
-                            <option value="">All</option>
-                            <option value="">Mallard</option>
-                            <option value="">Robin</option>
-                        </select>
-                        <label for="min-bn">Max. number of birds</label>
-                        <input type="number" name="minNumBirds" id="min-bn" placeholder="None">
-                        <label for="max-bn">Min. number of birds</label>
-                        <input type="number" name="maxNumBirds" id="max-bn" placeholder="None">
-                    </form>
-                </div>
-            </aside>
+            <sidebar></sidebar>
         </div>
     </body>
 </html>
