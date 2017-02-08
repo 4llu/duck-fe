@@ -38,6 +38,10 @@ select,
   transition: border-color $base-duration $base-timing;
   width: 100%;
 
+  &.short {
+    max-width: 250px;
+  }
+
   &:hover {
     border-color: shade($base-border-color, 20%);
   }

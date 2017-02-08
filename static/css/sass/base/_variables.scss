@@ -18,7 +18,7 @@ $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 3px;
+$base-border-radius: 2px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $large-spacing: $base-spacing * 2;
@@ -27,6 +27,7 @@ $base-z-index: 0;
 // Colors
 $blue: #1565c0;
 $green: #2ecc71;
+$red: #e74c3c;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ecf0f1;
@@ -36,9 +37,10 @@ $white: #fefefe;
 // Font Colors
 $base-font-color: $dark-gray;
 $action-color: $green;
+$warning-color: $red;
 
 // Border
-$base-border-color: $light-gray;
+$base-border-color: shade($light-gray, 15%);
 $base-border: 1px solid $base-border-color;
 
 // Shadow

@@ -19,6 +19,11 @@ h6 {
 
 p {
   margin: 0 0 $small-spacing;
+
+  &.error {
+      font-size: modular-scale(-1);
+      color: $warning-color;
+  }
 }
 
 a {

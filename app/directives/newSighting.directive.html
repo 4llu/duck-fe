@@ -1,19 +1,29 @@
 <div class="modal" ng-show="vm.show">
-  <div class="modal-fade-screen">
-    <div class="modal-inner">
-      <div class="modal-close" ng-click="vm.close()"></div>
-      <h1>New Sighting</h1>
-      <form ng-submit="vm.submit()">
-          <label for="">Date</label>
-          <input type="datetime-local" name="" value="">
-          <label for="count">Count</label>
-          <input type="text" name="count">
-          <label for="">Species</label>
-          <select name="species" ng-model="vm.species" ng-options="sp as (sp.name | capitalize ) for sp in vm.species"></select>
-          <label for="count">Description</label>
-          <textarea name="count"></textarea>
-          <button type="submit" name="button">Submit</button>
-      </form>
+    <div class="modal-fade-screen">
+        <div class="modal-inner">
+            <div class="modal-close" ng-click="vm.close()"></div>
+                <h1>New Sighting</h1>
+                <form name="vm.newSightingForm" ng-submit="vm.submit()" novalidate>
+                    <label for="new-sighting-time">Time</label>
+                    <input type="datetime-local" name="time" id="new-sighting-time" class="short" ng-model="vm.time" required>
+                    <p class="error" ng-show="vm.newSightingForm.time.$invalid && !vm.newSightingForm.time.$pristine">Not a valid time</p>
+
+                    <label for="new-sighting-count">Count</label>
+                    <input type="number" name="count" id="new-sighting-count" class="short" ng-model="vm.count" ng-min="0" step="1" required>
+                    <p class="error" ng-show="vm.newSightingForm.count.$invalid && !vm.newSightingForm.count.$pristine">Not a valid count</p>
+
+                    <label for="new-sighting-species">Species</label>
+                    <select name="species" id="new-sighting-species" ng-model="vm.species" ng-options="sp as (sp.name | capitalize ) for sp in vm.speciesList" class="short" required>
+                        <option value="">---</option>
+                    </select>
+
+                    <p class="error" ng-show="vm.newSightingForm.species.$invalid && !vm.newSightingForm.species.$pristine">Species required</p>
+                    <label for="new-sighting-description">Description</label>
+                    <textarea name="description" id="new-sighting-description" ng-model="vm.description" required></textarea>
+                    <p class="error" ng-show="vm.newSightingForm.description.$invalid && !vm.newSightingForm.description.$pristine">Description required</p>
+
+                    <button type="submit" name="newSightingSubmit">Submit</button>
+                </form>
+        </div>
     </div>
-  </div>
 </div>
