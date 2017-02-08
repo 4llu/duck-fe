@@ -102,22 +102,18 @@ app.get('/', (req, res) => {
 });
 
 app.get('/static/:folder/:path', (req, res) => {
-    console.log(path.join(__dirname + req.path));
-    res.sendFile(path.join(__dirname + req.path));
-});
-
-app.get('/app/:path', (req, res) => {
-    console.log(path.join(__dirname + req.path));
     res.sendFile(path.join(__dirname + req.path));
 });
 
 app.get('/app/:folder/:path', (req, res) => {
-    console.log(path.join(__dirname + req.path));
+    res.sendFile(path.join(__dirname + req.path));
+});
+
+app.get('/app/:path', (req, res) => {
     res.sendFile(path.join(__dirname + req.path));
 });
 
 app.get('/:path', (req, res) => {
-    console.log(path.join(__dirname + req.path));
     res.sendFile(path.join(__dirname + req.path));
 });
 
