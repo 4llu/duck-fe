@@ -14,7 +14,7 @@
                     <span class="sighting__spec-label">Species:</span>
                     <span class="sighting__spec-value sighting__spec-value--species">{{ sighting.species | capitalize}}</span>
                 </div>
-                <span class="sighting__date">{{ sighting.dateTime | date : "dd.MM.yyyy 'at' HH:mm"}}</span>
+                <span class="sighting__date">{{ sighting.dateTime | date : "dd.MM.yyyy 'at' HH:mm" : "+0000"}}</span>
             </div>
             <div class="sighting__spec">
                 <span class="sighting__spec-label">Number of birds:</span>
