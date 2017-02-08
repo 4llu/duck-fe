@@ -29,6 +29,7 @@
         // Functions
         vm.updateOptions = updateOptions;
         vm.initOptions = initOptions;
+        vm.newSighting = newSighting;
 
         // Species filter init
         var allSpecies = {name: "all"}
@@ -64,6 +65,10 @@
             vm.maxBirdNum = null;
 
             vm.updateOptions()
+        }
+
+        function newSighting() {
+            $rootScope.$broadcast("newSighting");
         }
 
         function getSpecies() {

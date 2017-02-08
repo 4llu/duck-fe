@@ -1,0 +1,86 @@
+.modal {
+    $modal-padding: 3em;
+    $modal-background: $base-background-color;
+    $modal-close-color: $dark-gray;
+
+    .modal-fade-screen { // overlay
+        @include position(fixed, 0);
+        background-color: rgba(#000, 0.85);
+        // opacity: 0;
+        padding-top: 10em;
+        text-align: left;
+        transition: opacity 0.25s ease;
+        // visibility: hidden;
+        z-index: 99999999999;
+
+        .modal-bg {
+            @include position(absolute, 0);
+            cursor: pointer;
+        }
+    }
+
+    .modal-close {
+        @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+        @include size(1.5em);
+        background: $modal-background;
+        cursor: pointer;
+
+        &::after,
+        &::before {
+            @include position(absolute, 3px 3px 0 50%);
+            @include size(0.15em, 1.5em);
+            background: $modal-close-color;
+            content: "";
+            display: block;
+            margin: -3px 0 0 -1px;
+            transform: rotate(45deg);
+        }
+
+        &:hover::after,
+        &:hover::before {
+            background: darken($modal-close-color, 10%);
+        }
+
+        &::before {
+            transform: rotate(-45deg);
+        }
+    }
+
+    .modal-inner {
+        position: relative;
+        top: 0.5em;
+        width: 30%;
+        max-height: 70%;
+        margin: auto;
+        margin-top: 0;
+        padding: $modal-padding;
+        border-radius: $base-border-radius;
+        overflow: auto;
+        background: $modal-background;
+        transition: opacity 0.25s ease;
+
+        h1 {
+            color: $base-font-color;
+            text-align: left;
+            text-transform: capitalize;
+        }
+    }
+
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+.js-modal-open {
+    .modal-fade-screen {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal-inner {
+        top: 0.5em;
+    }
+}
+
+// Based on code by Kasper Mikiewicz

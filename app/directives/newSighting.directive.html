@@ -1,0 +1,19 @@
+<div class="modal" ng-show="vm.show">
+  <div class="modal-fade-screen">
+    <div class="modal-inner">
+      <div class="modal-close" ng-click="vm.close()"></div>
+      <h1>New Sighting</h1>
+      <form ng-submit="vm.submit()">
+          <label for="">Date</label>
+          <input type="datetime-local" name="" value="">
+          <label for="count">Count</label>
+          <input type="text" name="count">
+          <label for="">Species</label>
+          <select name="species" ng-model="vm.species" ng-options="sp as (sp.name | capitalize ) for sp in vm.species"></select>
+          <label for="count">Description</label>
+          <textarea name="count"></textarea>
+          <button type="submit" name="button">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
