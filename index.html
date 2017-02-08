@@ -15,82 +15,74 @@
             <div class="content-wrap">
                 <main class="content">
                     <div class="sightings__info">
-                        3 sightings
+                        <div class="sightings__info-left">
+                            <a class="plain-link" href="javascript:void(0)"><img class="icon" src="/static/images/icon-refresh.svg">Refresh</a>
+                        </div>
+                        <div class="sightings__info-right">
+                            3 sightings
+                        </div>
                     </div>
                     <ul class="sightings">
                         <li class="sighting">
-                            <div class="sighting__info">
-                                <div class="sighting__info-left">
-                                    <div class="sighting__spec">
-                                        <span class="sighting__spec-label">Species:</span>
-                                        <span class="sighting__species">Mallard</span>
-                                    </div>
-                                    <div class="sighting__spec">
-                                        <span class="sighting__spec-label">Number of birds:</span>
-                                        <span class="sighting__bird-num">6</span>
-                                    </div>
+                            <div class="sighting__top-row">
+                                <div class="sighting__spec">
+                                    <span class="sighting__spec-label">Species:</span>
+                                    <span class="sighting__spec-value">Mallard</span>
                                 </div>
-                                <div class="sighting__info-right">
-                                    <span class="sighting__date">07.02.2017</span>
-                                </div>
+                                <span class="sighting__date">07.02.2017</span>
                             </div>
-                            <div class="sighting__description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at orci nec libero sodales iaculis et vel nunc.
-                                Etiam at scelerisque dolor. Vestibulum pretium dictum metus, id consequat leo blandit sit amet. Donec imperdiet,
-                                ipsum vitae luctus mattis, enim ligula finibus nunc, eget porta dolor orci non neque. Duis quis leo pulvinar, aliquam
-                                purus eu, cursus ipsum. Phasellus rutrum nisi ut lorem porta ultricies. Nam dapibus, nibh a facilisis lobortis.
+                            <div class="sighting__spec">
+                                <span class="sighting__spec-label">Number of birds:</span>
+                                <span class="sighting__spec-value">6</span>
+                            </div>
+                            <div class="sighting__spec">
+                                <span class="sighting__spec-label">Description:</span>
+                                <span class="sighting__spec-value">If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.</span>
                             </div>
                         </li>
                         <li class="sighting">
-                            <div class="sighting__info">
-                                <div class="sighting__info-left">
-                                    <div class="sighting__spec">
-                                        <span class="sighting__spec-label">Species:</span>
-                                        <span class="sighting__species">Mallard</span>
-                                    </div>
-                                    <div class="sighting__spec">
-                                        <span class="sighting__spec-label">Number of birds:</span>
-                                        <span class="sighting__bird-num">6</span>
-                                    </div>
+                            <div class="sighting__top-row">
+                                <div class="sighting__spec">
+                                    <span class="sighting__spec-label">Species:</span>
+                                    <span class="sighting__spec-value">Mallard</span>
                                 </div>
-                                <div class="sighting__info-right">
-                                    <span class="sighting__date">07.02.2017</span>
-                                </div>
+                                <span class="sighting__date">07.02.2017</span>
                             </div>
-                            <div class="sighting__description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam at orci nec libero sodales iaculis et vel nunc.
-                                Etiam at scelerisque dolor. Vestibulum pretium dictum metus, id consequat leo blandit sit amet. Donec imperdiet,
-                                ipsum vitae luctus mattis, enim ligula finibus nunc, eget porta dolor orci non neque. Duis quis leo pulvinar, aliquam
-                                purus eu, cursus ipsum. Phasellus rutrum nisi ut lorem porta ultricies. Nam dapibus, nibh a facilisis lobortis.
+                            <div class="sighting__spec">
+                                <span class="sighting__spec-label">Number of birds:</span>
+                                <span class="sighting__spec-value">6</span>
+                            </div>
+                            <div class="sighting__spec">
+                                <span class="sighting__spec-label">Description:</span>
+                                <span class="sighting__spec-value">If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.</span>
                             </div>
                         </li>
                     </ul>
                 </main>
             </div>
             <aside class="sidebar">
-                    <button type="button" class="btn-full-width" name="button">+ New sighting</button>
-                    <button type="button" class="btn-full-width" name="button">Refresh sightings</button>
                 <div class="sidebar__section">
-                    <form>
-                        <span>Order:</span>
-                        <select name="sightings-order">
-                            <option value="0">Newest first</option>
-                            <option value="0">Oldest first</option>
-                        </select>
-                    </form>
+                    <div class="u-center-text">
+                        <button type="button" name="new-sighting"><img class="icon" src="/static/images/icon-plus.svg">New sighting</button>
+                    </div>
                 </div>
                 <div class="sidebar__section">
-                    <form>
-                        <span>Filters:</span>
+                    <form class="sidebar__form">
+                        <label for="s-order">Order:</label>
+                        <select id="s-order" name="sightingsOrder">
+                            <option value="1">Newest first</option>
+                            <option value="0">Oldest first</option>
+                        </select>
                         <label for="">Species</label>
                         <select class="" name="">
+                            <option value="">All</option>
                             <option value="">Mallard</option>
                             <option value="">Robin</option>
                         </select>
-                        <label for="">Max # of birds</label>
-                        <input type="number" name="" value="">
-                        <label for="">Min # of birds</label>
-                        <input type="number" name="" value="">
+                        <label for="min-bn">Max. number of birds</label>
+                        <input type="number" name="minNumBirds" id="min-bn" placeholder="None">
+                        <label for="max-bn">Min. number of birds</label>
+                        <input type="number" name="maxNumBirds" id="max-bn" placeholder="None">
                     </form>
                 </div>
             </aside>

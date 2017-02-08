@@ -33,6 +33,15 @@ a {
   }
 }
 
+a.plain-link {
+    color: inherit;
+    transition: opacity $base-duration $base-timing;
+
+    &:hover {
+        opacity: 0.65;
+    }
+}
+
 hr {
   border-bottom: $base-border;
   border-left: 0;

@@ -1,6 +1,14 @@
 .sightings__info {
+    display: flex;
     margin-bottom: $small-spacing;
-    text-align: right;
+
+    &-left {
+        flex: 1;
+    }
+
+    &-right {
+        text-align: right;
+    }
 }
 
 .sightings {
@@ -10,21 +18,17 @@
 .sighting {
     margin-bottom: $small-spacing;
     padding: $base-spacing;
-    background-color: $white;
+    background-color: $light-gray;
     box-shadow: $base-shadow;
 }
 
-.sighting__info {
+.sighting__top-row {
     display: flex;
-    margin-bottom: $base-spacing;
+    justify-content: space-between;
 }
 
-.sighting__info-left {
-    flex: 1;
-}
-
-.sighting__info-right {
-    text-align: right;
+.sighting__spec {
+    display: flex;
 }
 
 .sighting__spec-label {
@@ -32,3 +36,7 @@
     width: 145px;
     font-weight: 600;
 }
+
+ .sighting__spec-value {
+     flex :1
+ }
