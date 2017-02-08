@@ -34,3 +34,7 @@ body {
     max-width: $content-width;
     margin: $large-spacing auto;
 }
+
+.sidebar-placeholder {
+    width: $sidebar-width;
+}

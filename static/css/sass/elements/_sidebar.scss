@@ -1,4 +1,7 @@
 .sidebar {
+    position: fixed;
+    right: 0;
+    height: 100vh;
     width: $sidebar-width;
     background-color: $light-gray;
     box-shadow: $base-shadow;
