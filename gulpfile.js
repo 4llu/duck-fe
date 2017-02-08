@@ -3,6 +3,8 @@ var sass = require("gulp-sass");
 var autoprefixer = require('gulp-autoprefixer');
 var cleanCSS = require("gulp-clean-css");
 var rename = require("gulp-rename");
+var concat = require("gulp-concat");
+var minify = require("gulp-minify");
 
 var rootDir = "";
 
@@ -22,7 +24,7 @@ gulp.task("sass", function () {
         .pipe(gulp.dest(rootDir + "static/css"));
 });
 
-gulp.task("minify", ["sass"], function() {
+gulp.task("minifyCSS", ["sass"], function() {
     return gulp.src(rootDir + "static/css/master.css")
         .pipe(cleanCSS({compatibility: "ie11"}))
         .pipe(rename (function(path) {
@@ -30,7 +32,6 @@ gulp.task("minify", ["sass"], function() {
         }))
         .pipe(gulp.dest(rootDir + "static/dist"))
 });
-
 
 // watch
 gulp.task("watch", ["sass"], function() {
