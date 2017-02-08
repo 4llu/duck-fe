@@ -26,6 +26,7 @@
     function Controller($http) {
         var vm = this;
 
+        // Functions
         vm.initOptions = initOptions;
         vm.updateOrder = updateOrder;
         vm.updateSpeciesFilter = updateSpeciesFilter;
