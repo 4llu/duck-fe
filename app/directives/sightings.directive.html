@@ -4,25 +4,25 @@
             <a class="plain-link" href="javascript:void(0)"><img class="icon" src="/static/images/icon-refresh.svg">Refresh</a>
         </div>
         <div class="sightings__info-right">
-            3 sightings
+            {{ vm.sightings.length }} sightings
         </div>
     </div>
     <ul class="sightings-list">
-        <li class="sighting">
+        <li class="sighting" ng-repeat="sighting in vm.sightings">
             <div class="sighting__top-row">
                 <div class="sighting__spec">
                     <span class="sighting__spec-label">Species:</span>
-                    <span class="sighting__spec-value">Mallard</span>
+                    <span class="sighting__spec-value sighting__spec-value--species">{{ sighting.species }}</span>
                 </div>
-                <span class="sighting__date">07.02.2017</span>
+                <span class="sighting__date">{{ sighting.dateTime | date : "dd.mm.yyyy 'at' HH:mm"}}</span>
             </div>
             <div class="sighting__spec">
                 <span class="sighting__spec-label">Number of birds:</span>
-                <span class="sighting__spec-value">6</span>
+                <span class="sighting__spec-value">{{ sighting.count }}</span>
             </div>
             <div class="sighting__spec">
                 <span class="sighting__spec-label">Description:</span>
-                <span class="sighting__spec-value">If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.</span>
+                <span class="sighting__spec-value">{{ sighting.description }}</span>
             </div>
         </li>
     </ul>

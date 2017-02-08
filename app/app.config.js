@@ -12,7 +12,7 @@
         $stateProvider
             .state("home", {
                 url: "/",
-                templateUrl: "/index.html",
+                templateUrl: "/index.html"
             });
 
         $compileProvider.debugInfoEnabled(false);
