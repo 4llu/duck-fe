@@ -20,10 +20,10 @@
         return directive;
     }
 
-    Controller.$inject = [];
+    Controller.$inject = ["$http"];
 
     /* @ngInject */
-    function Controller() {
+    function Controller($http) {
         var vm = this;
 
         vm.initOptions = initOptions;
@@ -72,27 +72,12 @@
         }
 
         function getSpecies() {
-            vm.species = [
-                  {
-                    name: "mallard"
-                  },
-                  {
-                    name: "redhead"
-                  },
-                  {
-                    name: "gadwall"
-                  },
-                  {
-                    name: "canvasback"
-                  },
-                  {
-                    name: "lesser scaup"
-                  }
-                ];
-
-            vm.species.unshift(allSpecies)
-
-            vm.initOptions();
+            $http.get("/species")
+                .then(function(res) {
+                    vm.species = res.data;
+                    vm.species.unshift(allSpecies)
+                    vm.initOptions();
+                });
         }
     }
 })();

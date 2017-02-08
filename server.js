@@ -81,6 +81,22 @@ const sightings = [
 
 app.use(bodyParser.json());
 
+// API
+app.get('/sightings', (req, res) => {
+  res.json(sightings);
+});
+
+app.post('/sightings', (req, res) => {
+  req.body.id = (sightings.length + 1).toString();
+  sightings.push(req.body);
+  res.json(req.body);
+});
+
+app.get('/species', (req, res) => {
+  res.json(species);
+});
+
+// Files
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + "/index.html"));
 });
@@ -103,21 +119,6 @@ app.get('/app/:folder/:path', (req, res) => {
 app.get('/:path', (req, res) => {
     console.log(path.join(__dirname + req.path));
     res.sendFile(path.join(__dirname + req.path));
-});
-
-// API
-app.get('/sightings', (req, res) => {
-  res.json(sightings);
-});
-
-app.post('/sightings', (req, res) => {
-  req.body.id = (sightings.length + 1).toString();
-  sightings.push(req.body);
-  res.json(req.body);
-});
-
-app.get('/species', (req, res) => {
-  res.json(species);
 });
 
 const port = process.env.PORT ? process.env.PORT : 8081;
