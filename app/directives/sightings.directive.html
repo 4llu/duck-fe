@@ -1,7 +1,7 @@
 <div class="sightings">
     <div class="sightings__info">
         <div class="sightings__info-left">
-            <a class="plain-link" href="javascript:void(0)"><img class="icon" src="/static/images/icon-refresh.svg">Refresh</a>
+            <a class="plain-link" href="javascript:void(0)" ng-click="vm.getSightings()"><img class="icon" src="/static/images/icon-refresh.svg">Reload</a>
         </div>
         <div class="sightings__info-right">
             {{ vm.sightings.length }} sightings
@@ -14,7 +14,7 @@
                     <span class="sighting__spec-label">Species:</span>
                     <span class="sighting__spec-value sighting__spec-value--species">{{ sighting.species | capitalize}}</span>
                 </div>
-                <span class="sighting__date">{{ sighting.dateTime | date : "dd.mm.yyyy 'at' HH:mm"}}</span>
+                <span class="sighting__date">{{ sighting.dateTime | date : "dd.MM.yyyy 'at' HH:mm"}}</span>
             </div>
             <div class="sighting__spec">
                 <span class="sighting__spec-label">Number of birds:</span>

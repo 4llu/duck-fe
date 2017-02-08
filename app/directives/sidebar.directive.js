@@ -20,18 +20,14 @@
         return directive;
     }
 
-    Controller.$inject = ["$http"];
+    Controller.$inject = ["$http", "$rootScope"];
 
     /* @ngInject */
-    function Controller($http) {
+    function Controller($http, $rootScope) {
         var vm = this;
 
-        // Functions
+        vm.updateOptions = updateOptions;
         vm.initOptions = initOptions;
-        vm.updateOrder = updateOrder;
-        vm.updateSpeciesFilter = updateSpeciesFilter;
-        vm.updateMinBirdNum = updateMinBirdNum;
-        vm.updateMaxBirdNum = updateMaxBirdNum;
 
         // Species filter init
         var allSpecies = {name: "all"}
@@ -42,22 +38,22 @@
 
         function activate() {
             getSpecies()
+            vm.updateOptions()
+
+            $rootScope.$on("sightingsLoaded", function() {
+                vm.updateOptions();
+            });
         }
 
-        function updateOrder() {
-            console.log(vm.order);
-        }
+        function updateOptions() {
+            vm.sightingsOptions = {
+                order: vm.order,
+                speciesFilter: vm.speciesFilter,
+                minBirdNum: vm.minBirdNum,
+                maxBirdNum: vm.maxBirdNum
+            }
 
-        function updateSpeciesFilter() {
-            console.log(vm.speciesFilter);
-        }
-
-        function updateMinBirdNum() {
-            console.log(vm.minBirdNum);
-        }
-
-        function updateMaxBirdNum() {
-            console.log(vm.maxBirdNum);
+            $rootScope.$broadcast("updateSightingOptions", vm.sightingsOptions)
         }
 
         function initOptions() {
@@ -66,10 +62,7 @@
             vm.minBirdNum = null;
             vm.maxBirdNum = null;
 
-            vm.updateOrder();
-            vm.updateSpeciesFilter();
-            vm.updateMinBirdNum();
-            vm.updateMaxBirdNum();
+            vm.updateOptions()
         }
 
         function getSpecies() {
