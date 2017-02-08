@@ -3,7 +3,16 @@ Duck frontend
 
 Frontend for the Vincit [Duck backend](https://github.com/jaakkoyl/duck-be).
 
-Basically this just uses the server.js and parts of the README from it.
+Uses the modified server.js from Duck backend for the backend.
+
+_Parts of README involving backend copied from [Duck backend README](https://github.com/jaakkoyl/duck-be/blob/master/README.md)._
+
+**Frontend made with:**
+* AngularJS (1)
+* Sass, with
+    * [Bourbon](http://bourbon.io/)
+    * [Bourbon Bitters](http://bitters.bourbon.io/)
+    * some components from [Bourbon Refills](http://refills.bourbon.io/)
 
 ## Requirements
 
