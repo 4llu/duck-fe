@@ -28,22 +28,22 @@
 
         vm.species = [
               {
-                name: 'mallard'
+                name: "mallard"
               },
               {
-                name: 'redhead'
+                name: "redhead"
               },
               {
-                name: 'gadwall'
+                name: "gadwall"
               },
               {
-                name: 'canvasback'
+                name: "canvasback"
               },
               {
-                name: 'lesser scaup'
+                name: "lesser scaup"
               }
             ];
-            
+
         activate();
 
         function activate() {
